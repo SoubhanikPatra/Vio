@@ -11,7 +11,7 @@ import {
 import { relations } from "drizzle-orm";
 
 /**
- * PostgreSQL schema for Lume travel super app.
+ * PostgreSQL schema for Vio travel super app.
  * Uses Neon.tech as the database provider.
  * All tables include createdAt and updatedAt timestamps for audit trails.
  */

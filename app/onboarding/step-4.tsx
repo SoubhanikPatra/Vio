@@ -2,8 +2,8 @@ import React from "react";
 import { ScrollView, Text, View, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
-import { LumeCard } from "@/components/lume-card";
+import { VioButton } from "@/components/Vio-button";
+import { VioCard } from "@/components/Vio-card";
 import { useOnboarding } from "@/lib/onboarding-context";
 import { cn } from "@/lib/utils";
 
@@ -74,7 +74,7 @@ export default function OnboardingStep4Screen() {
                       opacity: pressed ? 0.7 : 1,
                     })}
                   >
-                    <LumeCard
+                    <VioCard
                       variant={
                         data.travelFrequency === option.id
                           ? "elevated"
@@ -93,7 +93,7 @@ export default function OnboardingStep4Screen() {
                       {data.travelFrequency === option.id && (
                         <View className="w-5 h-5 rounded-full bg-primary" />
                       )}
-                    </LumeCard>
+                    </VioCard>
                   </Pressable>
                 ))}
               </View>
@@ -114,7 +114,7 @@ export default function OnboardingStep4Screen() {
                       opacity: pressed ? 0.7 : 1,
                     })}
                   >
-                    <LumeCard
+                    <VioCard
                       variant={
                         data.budget === option.id ? "elevated" : "outlined"
                       }
@@ -135,7 +135,7 @@ export default function OnboardingStep4Screen() {
                       {data.budget === option.id && (
                         <View className="w-5 h-5 rounded-full bg-primary" />
                       )}
-                    </LumeCard>
+                    </VioCard>
                   </Pressable>
                 ))}
               </View>
@@ -144,22 +144,22 @@ export default function OnboardingStep4Screen() {
 
           {/* Navigation */}
           <View className="gap-3 mt-8">
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={handleContinue}
               disabled={!data.travelFrequency || !data.budget}
             >
               Continue
-            </LumeButton>
+            </VioButton>
 
-            <LumeButton
+            <VioButton
               variant="ghost"
               size="lg"
               onPress={handleBack}
             >
               Back
-            </LumeButton>
+            </VioButton>
 
             <Text className="text-center text-sm text-muted">
               Step 4 of 5

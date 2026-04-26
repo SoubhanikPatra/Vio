@@ -1,12 +1,12 @@
 // Design System Components
-export { LumeButton } from "./lume-button";
-export type { LumeButtonProps } from "./lume-button";
+export { VioButton } from "./Vio-button";
+export type { VioButtonProps } from "./Vio-button";
 
-export { LumeCard } from "./lume-card";
-export type { LumeCardProps } from "./lume-card";
+export { VioCard } from "./Vio-card";
+export type { VioCardProps } from "./Vio-card";
 
-export { LumeInput } from "./lume-input";
-export type { LumeInputProps } from "./lume-input";
+export { VioInput } from "./Vio-input";
+export type { VioInputProps } from "./Vio-input";
 
 // Existing Components
 export { ScreenContainer } from "./screen-container";

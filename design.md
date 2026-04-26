@@ -1,25 +1,25 @@
-# Lume - Design System & Interface Plan
+# Vio - Design System & Interface Plan
 
 ## Brand Identity
 
-**App Name:** Lume  
+**App Name:** Vio  
 **Tagline:** AI-first travel super app  
 **Design Philosophy:** Clean, minimal, Notion/Linear-inspired  
 **Target Platforms:** iOS and Android (portrait orientation, 9:16)
 
 ### Color Palette
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| **Deep Indigo** | #3730A3 | Primary accent, buttons, active states |
-| **White** | #FFFFFF | Background (light mode) |
-| **Light Gray** | #F5F5F5 | Surface, cards, secondary backgrounds |
-| **Dark Gray** | #6B7280 | Secondary text, borders |
-| **Text Primary** | #111827 | Main text, headings |
-| **Text Secondary** | #6B7280 | Subtext, descriptions |
-| **Success** | #10B981 | Success states, confirmations |
-| **Warning** | #F59E0B | Warnings, alerts |
-| **Error** | #EF4444 | Errors, destructive actions |
+| Color              | Hex     | Usage                                  |
+| ------------------ | ------- | -------------------------------------- |
+| **Deep Indigo**    | #3730A3 | Primary accent, buttons, active states |
+| **White**          | #FFFFFF | Background (light mode)                |
+| **Light Gray**     | #F5F5F5 | Surface, cards, secondary backgrounds  |
+| **Dark Gray**      | #6B7280 | Secondary text, borders                |
+| **Text Primary**   | #111827 | Main text, headings                    |
+| **Text Secondary** | #6B7280 | Subtext, descriptions                  |
+| **Success**        | #10B981 | Success states, confirmations          |
+| **Warning**        | #F59E0B | Warnings, alerts                       |
+| **Error**          | #EF4444 | Errors, destructive actions            |
 
 ### Typography
 
@@ -53,12 +53,14 @@ Four main tabs accessible from any screen:
 **Purpose:** Collect traveler profile and interests during first launch.
 
 #### Step 1: Welcome Screen
-- Hero text: "Welcome to Lume"
+
+- Hero text: "Welcome to Vio"
 - Subtitle: "Your AI-powered travel companion"
 - CTA: "Get Started" button (Deep Indigo)
 - Skip option (optional)
 
 #### Step 2: Traveler Type Selection
+
 - Question: "What type of traveler are you?"
 - Options (cards, selectable):
   - Adventure Seeker
@@ -70,6 +72,7 @@ Four main tabs accessible from any screen:
 - Single selection, visual feedback on tap
 
 #### Step 3: Travel Interests (Multi-Select)
+
 - Question: "What interests you most?"
 - Options (chips/tags, multi-select):
   - Food & Dining
@@ -84,6 +87,7 @@ Four main tabs accessible from any screen:
 - "Next" button enabled after selection
 
 #### Step 4: Frequency & Budget
+
 - Question: "How often do you travel?"
 - Options (radio buttons):
   - Multiple times a year
@@ -97,6 +101,7 @@ Four main tabs accessible from any screen:
   - Luxury ($3000+)
 
 #### Step 5: Completion
+
 - Success message: "Profile complete!"
 - Subtitle: "Ready to explore the world"
 - CTA: "Start Exploring" → navigates to Home
@@ -106,6 +111,7 @@ Four main tabs accessible from any screen:
 ### 2. Auth Screens (Login/Signup)
 
 #### Signup Screen
+
 - Header: "Create Account"
 - Form fields:
   - Full Name (text input)
@@ -117,6 +123,7 @@ Four main tabs accessible from any screen:
 - Error handling: Display validation errors below each field
 
 #### Login Screen
+
 - Header: "Welcome Back"
 - Form fields:
   - Email (email input)
@@ -252,9 +259,10 @@ Four main tabs accessible from any screen:
 
 ## Design System Components
 
-### LumeButton
+### VioButton
 
 **Props:**
+
 - `variant`: "primary" | "secondary" | "outline" | "ghost" | "destructive"
 - `size`: "sm" | "md" | "lg"
 - `disabled`: boolean
@@ -263,6 +271,7 @@ Four main tabs accessible from any screen:
 - `children`: ReactNode
 
 **Variants:**
+
 - **Primary:** Deep Indigo background, white text, rounded corners (8px)
 - **Secondary:** Light Gray background, text primary, rounded corners
 - **Outline:** Transparent background, Deep Indigo border, Deep Indigo text
@@ -270,34 +279,39 @@ Four main tabs accessible from any screen:
 - **Destructive:** Error red background, white text
 
 **Sizes:**
+
 - **sm:** 12px padding, 14px font
 - **md:** 16px padding, 16px font (default)
 - **lg:** 20px padding, 18px font
 
 ---
 
-### LumeCard
+### VioCard
 
 **Props:**
+
 - `variant`: "default" | "elevated" | "outlined"
 - `onPress`: () => void (optional)
 - `children`: ReactNode
 
 **Variants:**
+
 - **Default:** Light Gray background, no border, subtle shadow
 - **Elevated:** White background, subtle shadow (2-4px offset)
 - **Outlined:** White background, Light Gray border (1px)
 
 **Styling:**
+
 - Border radius: 12px
 - Padding: 16px (default)
 - Shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
 
 ---
 
-### LumeInput
+### VioInput
 
 **Props:**
+
 - `placeholder`: string
 - `value`: string
 - `onChangeText`: (text: string) => void
@@ -308,6 +322,7 @@ Four main tabs accessible from any screen:
 - `multiline`: boolean
 
 **Styling:**
+
 - Border radius: 8px
 - Border: 1px Light Gray
 - Padding: 12px 16px
@@ -321,23 +336,27 @@ Four main tabs accessible from any screen:
 ## User Flows
 
 ### Flow 1: First-Time User
+
 1. App launches → Onboarding (5 steps)
 2. Completes onboarding → Redirected to Signup
 3. Signs up → Redirected to Home
 4. Home screen shows empty state with "Create Trip" CTA
 
 ### Flow 2: Returning User (Logged In)
+
 1. App launches → Auth check (token validation)
 2. Valid token → Home screen with upcoming trips
 3. Invalid/expired token → Login screen
 
 ### Flow 3: Create a Trip (Future Phase)
+
 1. User taps "Create Trip" on Home
 2. Trip creation form (destination, dates, interests)
 3. Trip saved → Trips screen updated
 4. Trip appears on Home screen
 
 ### Flow 4: Explore Destinations
+
 1. User taps "Search" tab
 2. Browses or searches destinations
 3. Taps destination → Detail screen (future)
@@ -348,20 +367,24 @@ Four main tabs accessible from any screen:
 ## Interaction & Feedback
 
 ### Press Feedback
+
 - **Buttons:** Scale to 0.97 + haptic light feedback
 - **Cards:** Opacity to 0.7 on press
 - **Icons:** Opacity to 0.6 on press
 
 ### Loading States
+
 - Buttons show spinner + disabled state
 - Screens show skeleton loaders or spinners
 
 ### Error Handling
+
 - Toast notifications for errors (bottom of screen)
 - Form validation errors below input fields
 - Empty states with helpful CTAs
 
 ### Success Feedback
+
 - Toast notification (green, checkmark icon)
 - Haptic success feedback (if available)
 
@@ -390,7 +413,7 @@ Four main tabs accessible from any screen:
 
 ## Next Steps
 
-1. Implement LumeButton, LumeCard, LumeInput components
+1. Implement VioButton, VioCard, VioInput components
 2. Build Onboarding flow (5 screens)
 3. Build Auth screens (Signup/Login)
 4. Build Home screen with placeholder trips

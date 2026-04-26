@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { cn } from "@/lib/utils";
 
-export interface LumeButtonProps extends Omit<PressableProps, "children" | "style"> {
+export interface VioButtonProps extends Omit<PressableProps, "children" | "style"> {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "outline" | "ghost" | "destructive";
   size?: "sm" | "md" | "lg";
@@ -17,7 +17,7 @@ export interface LumeButtonProps extends Omit<PressableProps, "children" | "styl
 }
 
 /**
- * LumeButton - Core button component for Lume
+ * VioButton - Core button component for Vio
  *
  * Variants:
  * - primary: Deep Indigo background, white text (main CTA)
@@ -31,7 +31,7 @@ export interface LumeButtonProps extends Omit<PressableProps, "children" | "styl
  * - md: 16px padding, 16px font (default)
  * - lg: 20px padding, 18px font
  */
-export function LumeButton({
+export function VioButton({
   children,
   variant = "primary",
   size = "md",
@@ -39,7 +39,7 @@ export function LumeButton({
   loading = false,
   onPress,
   ...props
-}: LumeButtonProps) {
+}: VioButtonProps) {
   const isDisabled = disabled || loading;
 
   // Base styles

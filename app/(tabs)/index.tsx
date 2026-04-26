@@ -1,7 +1,7 @@
 import { ScrollView, Text, View } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
-import { LumeCard } from "@/components/lume-card";
+import { VioButton } from "@/components/Vio-button";
+import { VioCard } from "@/components/Vio-card";
 import { useAuth } from "@/lib/auth-context";
 import { useRouter } from "expo-router";
 
@@ -27,7 +27,7 @@ export default function HomeScreen() {
 
           {/* Quick Stats */}
           <View className="flex-row gap-3">
-            <LumeCard variant="elevated" className="flex-1">
+            <VioCard variant="elevated" className="flex-1">
               <View className="gap-2 items-center">
                 <Text className="text-3xl">📍</Text>
                 <Text className="text-2xl font-bold text-foreground">0</Text>
@@ -35,9 +35,9 @@ export default function HomeScreen() {
                   Trips Planned
                 </Text>
               </View>
-            </LumeCard>
+            </VioCard>
 
-            <LumeCard variant="elevated" className="flex-1">
+            <VioCard variant="elevated" className="flex-1">
               <View className="gap-2 items-center">
                 <Text className="text-3xl">🌍</Text>
                 <Text className="text-2xl font-bold text-foreground">0</Text>
@@ -45,7 +45,7 @@ export default function HomeScreen() {
                   Countries
                 </Text>
               </View>
-            </LumeCard>
+            </VioCard>
           </View>
 
           {/* Upcoming Trips Section */}
@@ -55,7 +55,7 @@ export default function HomeScreen() {
             </Text>
 
             {/* Empty State */}
-            <LumeCard variant="outlined">
+            <VioCard variant="outlined">
               <View className="gap-3 items-center py-8">
                 <Text className="text-5xl">✈️</Text>
                 <Text className="text-lg font-semibold text-foreground text-center">
@@ -64,34 +64,34 @@ export default function HomeScreen() {
                 <Text className="text-sm text-muted text-center">
                   Start planning your next adventure
                 </Text>
-                <LumeButton
+                <VioButton
                   variant="primary"
                   size="md"
                   onPress={() => router.push("(tabs)/trips" as any)}
                 >
                   Create Trip
-                </LumeButton>
+                </VioButton>
               </View>
-            </LumeCard>
+            </VioCard>
           </View>
 
           {/* Quick Actions */}
           <View className="gap-2">
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={() => router.push("(tabs)/trips" as any)}
             >
               Create New Trip
-            </LumeButton>
+            </VioButton>
 
-            <LumeButton
+            <VioButton
               variant="outline"
               size="lg"
               onPress={() => router.push("(tabs)/search" as any)}
             >
               Explore Destinations
-            </LumeButton>
+            </VioButton>
           </View>
 
           {/* Trending Section */}
@@ -101,7 +101,7 @@ export default function HomeScreen() {
             </Text>
 
             {[1, 2, 3].map((i) => (
-              <LumeCard key={i} variant="outlined">
+              <VioCard key={i} variant="outlined">
                 <View className="gap-2">
                   <View className="h-32 bg-surface rounded-lg items-center justify-center">
                     <Text className="text-4xl">🌏</Text>
@@ -113,12 +113,12 @@ export default function HomeScreen() {
                     Coming soon in Phase 2
                   </Text>
                 </View>
-              </LumeCard>
+              </VioCard>
             ))}
           </View>
 
           {/* Phase 1 Notice
-          <LumeCard variant="outlined" className="bg-primary/5 border-primary/20">
+          <VioCard variant="outlined" className="bg-primary/5 border-primary/20">
             <View className="gap-2">
               <Text className="font-semibold text-primary">
                 🚀 Phase 1 Complete
@@ -127,7 +127,7 @@ export default function HomeScreen() {
                 Foundation & Design System is ready. Phase 2 will include AI-powered search, trip creation, and more.
               </Text>
             </View>
-          </LumeCard> */}
+          </VioCard> */}
         </View>
       </ScrollView>
     </ScreenContainer>

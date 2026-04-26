@@ -99,10 +99,10 @@ describe("Onboarding Context", () => {
   });
 
   it("should use correct storage keys", () => {
-    const ONBOARDING_KEY = "lume_onboarding_data";
-    const ONBOARDING_COMPLETE_KEY = "lume_onboarding_complete";
+    const ONBOARDING_KEY = "Vio_onboarding_data";
+    const ONBOARDING_COMPLETE_KEY = "Vio_onboarding_complete";
 
-    expect(ONBOARDING_KEY).toBe("lume_onboarding_data");
-    expect(ONBOARDING_COMPLETE_KEY).toBe("lume_onboarding_complete");
+    expect(ONBOARDING_KEY).toBe("Vio_onboarding_data");
+    expect(ONBOARDING_COMPLETE_KEY).toBe("Vio_onboarding_complete");
   });
 });

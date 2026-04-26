@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
+import { VioButton } from "@/components/Vio-button";
 import { useOnboarding } from "@/lib/onboarding-context";
 
 export default function OnboardingStep1Screen() {
@@ -25,7 +25,7 @@ export default function OnboardingStep1Screen() {
           <View className="gap-6 flex-1 justify-center">
             <View className="gap-3">
               <Text className="text-5xl font-bold text-foreground text-center">
-                Welcome to Lume
+                Welcome to Vio
               </Text>
               <Text className="text-lg text-muted text-center leading-relaxed">
                 Your AI-powered travel companion. Let's get to know your travel style.
@@ -40,13 +40,13 @@ export default function OnboardingStep1Screen() {
 
           {/* CTA */}
           <View className="gap-3">
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={handleContinue}
             >
               Get Started
-            </LumeButton>
+            </VioButton>
 
             <Text className="text-center text-sm text-muted">
               Step 1 of 5

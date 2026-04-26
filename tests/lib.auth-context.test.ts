@@ -67,10 +67,10 @@ describe("Auth Context", () => {
   });
 
   it("should use correct token storage keys", () => {
-    const TOKEN_KEY = "lume_auth_token";
-    const USER_KEY = "lume_auth_user";
+    const TOKEN_KEY = "Vio_auth_token";
+    const USER_KEY = "Vio_auth_user";
 
-    expect(TOKEN_KEY).toBe("lume_auth_token");
-    expect(USER_KEY).toBe("lume_auth_user");
+    expect(TOKEN_KEY).toBe("Vio_auth_token");
+    expect(USER_KEY).toBe("Vio_auth_user");
   });
 });

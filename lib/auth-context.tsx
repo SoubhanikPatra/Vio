@@ -33,8 +33,8 @@ export interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const TOKEN_KEY = "lume_auth_token";
-const USER_KEY = "lume_auth_user";
+const TOKEN_KEY = "Vio_auth_token";
+const USER_KEY = "Vio_auth_user";
 
 /**
  * AuthProvider - Manages user authentication state

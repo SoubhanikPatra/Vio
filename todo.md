@@ -2,19 +2,19 @@
 
 ## Foundation & Setup
 
-- [ ] Fix TypeScript error in server/_core/storageProxy.ts
-- [ ] Update app.config.ts with Lume branding (appName, appSlug)
+- [ ] Fix TypeScript error in server/\_core/storageProxy.ts
+- [ ] Update app.config.ts with Vio branding (appName, appSlug)
 - [ ] Generate and set app logo/icon
-- [ ] Configure theme.config.js with Lume colors (Deep Indigo #3730A3, Light Gray, etc.)
+- [ ] Configure theme.config.js with Vio colors (Deep Indigo #3730A3, Light Gray, etc.)
 - [ ] Set up Prisma schema (User, Trip, ItineraryItem tables)
 - [ ] Configure PostgreSQL connection (Neon.tech)
 - [ ] Set up environment variables for database and JWT
 
 ## Design System Components
 
-- [x] Create LumeButton component (variants: primary, secondary, outline, ghost, destructive)
-- [x] Create LumeCard component (variants: default, elevated, outlined)
-- [x] Create LumeInput component (text, email, password, multiline support)
+- [x] Create VioButton component (variants: primary, secondary, outline, ghost, destructive)
+- [x] Create VioCard component (variants: default, elevated, outlined)
+- [x] Create VioInput component (text, email, password, multiline support)
 - [x] Ensure all components use NativeWind (Tailwind) + Inter font
 - [x] Add component exports to lib/components/index.ts
 

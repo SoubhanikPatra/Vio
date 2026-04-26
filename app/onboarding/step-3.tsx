@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, Text, View, Pressable, FlatList } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
+import { VioButton } from "@/components/Vio-button";
 import { useOnboarding, type TravelInterest } from "@/lib/onboarding-context";
 import { cn } from "@/lib/utils";
 
@@ -107,22 +107,22 @@ export default function OnboardingStep3Screen() {
 
           {/* Navigation */}
           <View className="gap-3 mt-8">
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={handleContinue}
               disabled={data.interests.length < 2}
             >
               Continue
-            </LumeButton>
+            </VioButton>
 
-            <LumeButton
+            <VioButton
               variant="ghost"
               size="lg"
               onPress={handleBack}
             >
               Back
-            </LumeButton>
+            </VioButton>
 
             <Text className="text-center text-sm text-muted">
               Step 3 of 5

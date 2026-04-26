@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { ScrollView, Text, View, Pressable } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
-import { LumeCard } from "@/components/lume-card";
+import { VioButton } from "@/components/Vio-button";
+import { VioCard } from "@/components/Vio-card";
 
 type TabType = "active" | "planned" | "completed";
 
@@ -78,9 +78,9 @@ export default function TripsScreen() {
               </Text>
             </View>
 
-            <LumeButton variant="primary" size="lg">
+            <VioButton variant="primary" size="lg">
               Create New Trip
-            </LumeButton>
+            </VioButton>
           </View>
 
           {/* Trips List Placeholder */}

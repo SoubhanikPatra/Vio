@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
-import { LumeInput } from "@/components/lume-input";
+import { VioButton } from "@/components/Vio-button";
+import { VioInput } from "@/components/Vio-input";
 import { useAuth } from "@/lib/auth-context";
 
 export default function SignupScreen() {
@@ -72,7 +72,7 @@ export default function SignupScreen() {
           <View className="gap-2 mb-8">
             <Text className="text-4xl font-bold text-foreground">Create Account</Text>
             <Text className="text-base text-muted">
-              Join Lume and start exploring
+              Join Vio and start exploring
             </Text>
           </View>
 
@@ -84,7 +84,7 @@ export default function SignupScreen() {
               </View>
             )}
 
-            <LumeInput
+            <VioInput
               label="Full Name"
               type="text"
               placeholder="John Doe"
@@ -94,7 +94,7 @@ export default function SignupScreen() {
               editable={!isLoading}
             />
 
-            <LumeInput
+            <VioInput
               label="Email"
               type="email"
               placeholder="you@example.com"
@@ -104,7 +104,7 @@ export default function SignupScreen() {
               editable={!isLoading}
             />
 
-            <LumeInput
+            <VioInput
               label="Password"
               type="password"
               placeholder="••••••••"
@@ -114,7 +114,7 @@ export default function SignupScreen() {
               editable={!isLoading}
             />
 
-            <LumeInput
+            <VioInput
               label="Confirm Password"
               type="password"
               placeholder="••••••••"
@@ -127,7 +127,7 @@ export default function SignupScreen() {
 
           {/* CTA Buttons */}
           <View className="gap-3 mt-8">
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={handleSignup}
@@ -135,7 +135,7 @@ export default function SignupScreen() {
               loading={isLoading}
             >
               {isLoading ? "" : "Create Account"}
-            </LumeButton>
+            </VioButton>
 
             <View className="flex-row items-center justify-center gap-1">
               <Text className="text-muted text-sm">Already have an account? </Text>

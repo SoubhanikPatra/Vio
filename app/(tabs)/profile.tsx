@@ -1,8 +1,8 @@
 import React from "react";
 import { ScrollView, Text, View, Pressable } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
-import { LumeCard } from "@/components/lume-card";
+import { VioButton } from "@/components/Vio-button";
+import { VioCard } from "@/components/Vio-card";
 import { useAuth } from "@/lib/auth-context";
 import { useRouter } from "expo-router";
 
@@ -27,13 +27,13 @@ export default function ProfileScreen() {
             <Text className="text-2xl font-bold text-foreground text-center">
               Please log in to view your profile
             </Text>
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={() => router.push("auth/login" as any)}
             >
               Log In
-            </LumeButton>
+            </VioButton>
           </View>
         </ScrollView>
       </ScreenContainer>
@@ -55,7 +55,7 @@ export default function ProfileScreen() {
           </View>
 
           {/* User Info Card */}
-          <LumeCard variant="elevated">
+          <VioCard variant="elevated">
             <View className="gap-4">
               {/* Avatar Placeholder */}
               <View className="w-16 h-16 rounded-full bg-primary items-center justify-center">
@@ -73,11 +73,11 @@ export default function ProfileScreen() {
               </View>
 
               {/* Edit Profile Button */}
-              <LumeButton variant="outline" size="md">
+              <VioButton variant="outline" size="md">
                 Edit Profile
-              </LumeButton>
+              </VioButton>
             </View>
-          </LumeCard>
+          </VioCard>
 
           {/* Traveler Profile Section */}
           <View className="gap-3">
@@ -85,7 +85,7 @@ export default function ProfileScreen() {
               Traveler Profile
             </Text>
 
-            <LumeCard variant="outlined">
+            <VioCard variant="outlined">
               <View className="gap-3">
                 <View>
                   <Text className="text-sm text-muted mb-1">
@@ -109,11 +109,11 @@ export default function ProfileScreen() {
                   </Text>
                 </View>
 
-                <LumeButton variant="outline" size="md">
+                <VioButton variant="outline" size="md">
                   Edit Preferences
-                </LumeButton>
+                </VioButton>
               </View>
-            </LumeCard>
+            </VioCard>
           </View>
 
           {/* Settings Section */}
@@ -122,7 +122,7 @@ export default function ProfileScreen() {
               Settings
             </Text>
 
-            <LumeCard variant="outlined">
+            <VioCard variant="outlined">
               <View className="gap-3">
                 <Pressable
                   style={({ pressed }) => ({
@@ -150,28 +150,28 @@ export default function ProfileScreen() {
                   </View>
                 </Pressable>
               </View>
-            </LumeCard>
+            </VioCard>
           </View>
 
           {/* Account Actions */}
           <View className="gap-2">
-            <LumeButton variant="secondary" size="lg">
+            <VioButton variant="secondary" size="lg">
               Change Password
-            </LumeButton>
+            </VioButton>
 
-            <LumeButton
+            <VioButton
               variant="destructive"
               size="lg"
               onPress={handleLogout}
             >
               Logout
-            </LumeButton>
+            </VioButton>
           </View>
 
           {/* Footer */}
           <View className="items-center gap-1 py-4">
             <Text className="text-xs text-muted">
-              Lume v1.0.0
+              Vio v1.0.0
             </Text>
             <Text className="text-xs text-muted">
               Phase 1 - Foundation & Design System

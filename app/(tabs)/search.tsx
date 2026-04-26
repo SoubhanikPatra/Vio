@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeInput } from "@/components/lume-input";
-import { LumeCard } from "@/components/lume-card";
+import { VioInput } from "@/components/Vio-input";
+import { VioCard } from "@/components/Vio-card";
 
 export default function SearchScreen() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +22,7 @@ export default function SearchScreen() {
           </View>
 
           {/* Search Bar */}
-          <LumeInput
+          <VioInput
             placeholder="Search destinations, trips..."
             type="text"
             value={searchQuery}
@@ -48,7 +48,7 @@ export default function SearchScreen() {
                   Trending Now
                 </Text>
                 {[1, 2, 3].map((i) => (
-                  <LumeCard key={i} variant="outlined">
+                  <VioCard key={i} variant="outlined">
                     <View className="gap-2">
                       <View className="h-32 bg-surface rounded-lg items-center justify-center">
                         <Text className="text-4xl">🌍</Text>
@@ -60,7 +60,7 @@ export default function SearchScreen() {
                         Coming soon in Phase 2
                       </Text>
                     </View>
-                  </LumeCard>
+                  </VioCard>
                 ))}
               </View>
             </View>

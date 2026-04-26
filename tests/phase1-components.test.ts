@@ -4,11 +4,11 @@ import { describe, it, expect } from "vitest";
  * Phase 1 - Design System Components Tests
  * 
  * These tests verify the core design system components and contexts
- * that were built for Phase 1 of Lume.
+ * that were built for Phase 1 of Vio.
  */
 
 describe("Phase 1 - Design System", () => {
-  describe("LumeButton Component", () => {
+  describe("VioButton Component", () => {
     it("should support primary variant", () => {
       const variant = "primary";
       expect(["primary", "secondary", "outline", "ghost", "destructive"]).toContain(
@@ -34,7 +34,7 @@ describe("Phase 1 - Design System", () => {
     });
   });
 
-  describe("LumeCard Component", () => {
+  describe("VioCard Component", () => {
     it("should support default variant", () => {
       const variant = "default";
       expect(["default", "elevated", "outlined"]).toContain(variant);
@@ -56,7 +56,7 @@ describe("Phase 1 - Design System", () => {
     });
   });
 
-  describe("LumeInput Component", () => {
+  describe("VioInput Component", () => {
     it("should support text input type", () => {
       const type = "text";
       expect(["text", "email", "password", "number"]).toContain(type);

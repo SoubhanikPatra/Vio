@@ -1,26 +1,26 @@
 import { describe, it, expect } from "vitest";
 
 /**
- * LumeButton Component Tests
+ * VioButton Component Tests
  * 
- * These tests verify that the LumeButton component:
+ * These tests verify that the VioButton component:
  * - Renders with correct variants (primary, secondary, outline, ghost, destructive)
  * - Renders with correct sizes (sm, md, lg)
  * - Handles disabled and loading states
  * - Applies correct styling based on props
  */
 
-describe("LumeButton Component", () => {
-  it("should export LumeButton component", () => {
+describe("VioButton Component", () => {
+  it("should export VioButton component", () => {
     // Import test
-    const { LumeButton } = require("@/components/lume-button");
-    expect(LumeButton).toBeDefined();
-    expect(typeof LumeButton).toBe("function");
+    const { VioButton } = require("@/components/Vio-button");
+    expect(VioButton).toBeDefined();
+    expect(typeof VioButton).toBe("function");
   });
 
   it("should have correct prop interface", () => {
     // Type checking test
-    const { LumeButton } = require("@/components/lume-button");
+    const { VioButton } = require("@/components/Vio-button");
     const props = {
       children: "Click me",
       variant: "primary" as const,

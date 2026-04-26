@@ -9,7 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Ionicons } from "@expo/vector-icons";
 
-export interface LumeInputProps extends Omit<TextInputProps, "style"> {
+export interface VioInputProps extends Omit<TextInputProps, "style"> {
   label?: string;
   error?: string;
   type?: "text" | "email" | "password" | "number";
@@ -18,7 +18,7 @@ export interface LumeInputProps extends Omit<TextInputProps, "style"> {
 }
 
 /**
- * LumeInput - Text input component for Lume
+ * VioInput - Text input component for Vio
  *
  * Features:
  * - Label support
@@ -36,7 +36,7 @@ export interface LumeInputProps extends Omit<TextInputProps, "style"> {
  * - Error state: Error red border, error message below
  * - Disabled state: Light Gray background, opacity 0.5
  */
-export function LumeInput({
+export function VioInput({
   label,
   error,
   type = "text",
@@ -46,7 +46,7 @@ export function LumeInput({
   value,
   onChangeText,
   ...props
-}: LumeInputProps) {
+}: VioInputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 

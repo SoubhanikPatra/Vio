@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ScrollView, Text, View, ActivityIndicator } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
+import { VioButton } from "@/components/Vio-button";
 import { useOnboarding } from "@/lib/onboarding-context";
 import { useAuth } from "@/lib/auth-context";
 
@@ -57,7 +57,7 @@ export default function OnboardingStep5Screen() {
                 Profile Complete!
               </Text>
               <Text className="text-lg text-muted text-center leading-relaxed">
-                You're all set. Ready to explore the world with Lume.
+                You're all set. Ready to explore the world with Vio.
               </Text>
             </View>
 
@@ -94,7 +94,7 @@ export default function OnboardingStep5Screen() {
 
           {/* CTA */}
           <View className="gap-3 mt-8">
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={handleComplete}
@@ -102,7 +102,7 @@ export default function OnboardingStep5Screen() {
               loading={isLoading}
             >
               {isLoading ? "" : "Start Exploring"}
-            </LumeButton>
+            </VioButton>
 
             <Text className="text-center text-sm text-muted">
               Step 5 of 5

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ScrollView, Text, View, ActivityIndicator } from "react-native";
 import { useRouter, Link } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
-import { LumeButton } from "@/components/lume-button";
-import { LumeInput } from "@/components/lume-input";
+import { VioButton } from "@/components/Vio-button";
+import { VioInput } from "@/components/Vio-input";
 import { useAuth } from "@/lib/auth-context";
 
 export default function LoginScreen() {
@@ -62,7 +62,7 @@ export default function LoginScreen() {
           <View className="gap-2 mb-8">
             <Text className="text-4xl font-bold text-foreground">Welcome Back</Text>
             <Text className="text-base text-muted">
-              Sign in to your Lume account
+              Sign in to your Vio account
             </Text>
           </View>
 
@@ -74,7 +74,7 @@ export default function LoginScreen() {
               </View>
             )}
 
-            <LumeInput
+            <VioInput
               label="Email"
               type="email"
               placeholder="you@example.com"
@@ -84,7 +84,7 @@ export default function LoginScreen() {
               editable={!isLoading}
             />
 
-            <LumeInput
+            <VioInput
               label="Password"
               type="password"
               placeholder="••••••••"
@@ -97,7 +97,7 @@ export default function LoginScreen() {
 
           {/* CTA Buttons */}
           <View className="gap-3 mt-8">
-            <LumeButton
+            <VioButton
               variant="primary"
               size="lg"
               onPress={handleLogin}
@@ -105,7 +105,7 @@ export default function LoginScreen() {
               loading={isLoading}
             >
               {isLoading ? "" : "Log In"}
-            </LumeButton>
+            </VioButton>
 
             <View className="flex-row items-center justify-center gap-1">
               <Text className="text-muted text-sm">Don't have an account? </Text>

@@ -45,8 +45,8 @@ const OnboardingContext = createContext<OnboardingContextType | undefined>(
   undefined
 );
 
-const ONBOARDING_KEY = "lume_onboarding_data";
-const ONBOARDING_COMPLETE_KEY = "lume_onboarding_complete";
+const ONBOARDING_KEY = "Vio_onboarding_data";
+const ONBOARDING_COMPLETE_KEY = "Vio_onboarding_complete";
 
 const initialData: OnboardingData = {
   travelerType: null,
