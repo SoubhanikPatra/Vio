@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import * as SecureStore from "expo-secure-store";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Platform } from "react-native";
+import { getApiBaseUrl } from "@/constants/oauth";
 
 export interface AuthUser {
   id: number;
@@ -35,6 +36,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const TOKEN_KEY = "Vio_auth_token";
 const USER_KEY = "Vio_auth_user";
+
+const buildApiUrl = (path: string) => `${getApiBaseUrl()}${path}`;
 
 /**
  * AuthProvider - Manages user authentication state
@@ -81,17 +84,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setIsLoading(true);
 
       // Call backend API
-      const response = await fetch("http://localhost:3000/api/auth/login", {
+      const response = await fetch(buildApiUrl("/api/auth/login"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("Login failed");
+        throw new Error(data.error || "Login failed");
       }
 
-      const data = await response.json();
       const { token: newToken, user: newUser } = data;
 
       // Store token and user
@@ -117,17 +121,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setIsLoading(true);
 
       // Call backend API
-      const response = await fetch("http://localhost:3000/api/auth/signup", {
+      const response = await fetch(buildApiUrl("/api/auth/signup"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password, name }),
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("Signup failed");
+        throw new Error(data.error || "Signup failed");
       }
 
-      const data = await response.json();
       const { token: newToken, user: newUser } = data;
 
       // Store token and user
@@ -154,7 +159,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       // Call backend API
       if (token) {
-        await fetch("http://localhost:3000/api/auth/logout", {
+        await fetch(buildApiUrl("/api/auth/logout"), {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -192,7 +197,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       // Call backend API to save onboarding data
       const response = await fetch(
-        "http://localhost:3000/api/users/onboarding",
+        buildApiUrl("/api/users/onboarding"),
         {
           method: "POST",
           headers: {
@@ -206,11 +211,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
       );
 
+      const updatedUser = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("Failed to save onboarding data");
+        throw new Error(updatedUser.error || "Failed to save onboarding data");
       }
 
-      const updatedUser = await response.json();
       setUser(updatedUser);
       await AsyncStorage.setItem(USER_KEY, JSON.stringify(updatedUser));
     } catch (error) {

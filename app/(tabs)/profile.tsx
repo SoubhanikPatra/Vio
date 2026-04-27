@@ -103,9 +103,15 @@ export default function ProfileScreen() {
                     Interests
                   </Text>
                   <Text className="font-semibold text-foreground">
-                    {user.interests
-                      ? JSON.parse(user.interests).join(", ")
-                      : "Not set"}
+                    {(() => {
+                      if (!user.interests) return "Not set";
+                      try {
+                        const parsed = JSON.parse(user.interests);
+                        return Array.isArray(parsed) ? parsed.join(", ") : "Not set";
+                      } catch (e) {
+                        return "Not set";
+                      }
+                    })()}
                   </Text>
                 </View>
 

@@ -24,6 +24,37 @@ export const OWNER_OPEN_ID = env.ownerId;
 export const OWNER_NAME = env.ownerName;
 export const API_BASE_URL = env.apiBaseUrl;
 
+function deriveNativeApiBaseUrl(): string {
+  const sourceCode = (ReactNative.NativeModules as Record<string, any> | undefined)?.SourceCode;
+  const scriptUrl = sourceCode?.scriptURL as string | undefined;
+
+  if (scriptUrl) {
+    try {
+      const parsed = new URL(scriptUrl);
+      if (parsed.hostname) {
+        return `http://${parsed.hostname}:3000`;
+      }
+    } catch {
+      // Ignore malformed script URL and fall through to Linking-based parsing.
+    }
+  }
+
+  const appUrl = Linking.createURL("/");
+  if (appUrl) {
+    try {
+      const normalized = appUrl.replace(/^exp:\/\//, "http://");
+      const parsed = new URL(normalized);
+      if (parsed.hostname) {
+        return `http://${parsed.hostname}:3000`;
+      }
+    } catch {
+      // Ignore malformed app URL and return empty fallback below.
+    }
+  }
+
+  return "";
+}
+
 /**
  * Get the API base URL, deriving from current hostname if not set.
  * Metro runs on 8081, API server runs on 3000.
@@ -43,6 +74,10 @@ export function getApiBaseUrl(): string {
     if (apiHostname !== hostname) {
       return `${protocol}//${apiHostname}`;
     }
+  }
+
+  if (ReactNative.Platform.OS === "android" || ReactNative.Platform.OS === "ios") {
+    return deriveNativeApiBaseUrl();
   }
 
   // Fallback to empty (will use relative URL)

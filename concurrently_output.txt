@@ -1,0 +1,18 @@
+
+> app-template@1.0.0 dev:metro /home/soubhanik-patra/Work/Placement/Projects/Vio
+> cross-env EXPO_USE_METRO_WORKSPACE_ROOT=1 npx expo start --port ${EXPO_PORT:-8081}
+
+
+> app-template@1.0.0 dev:server /home/soubhanik-patra/Work/Placement/Projects/Vio
+> cross-env NODE_ENV=development tsx watch server/_core/index.ts
+
+Starting project at /home/soubhanik-patra/Work/Placement/Projects/Vio
+[OAuth] Initialized with baseURL: 
+[api] server listening on port 3000
+React Compiler enabled
+Starting Metro Bundler
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+ ELIFECYCLE  Command failed.
+11:33:46 AM [tsx] Previous process hasn't exited yet. Force killing...
+ ELIFECYCLE  Command failed.
